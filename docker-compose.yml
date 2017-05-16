@@ -1,0 +1,18 @@
+version: '3'
+services:
+  unifi:
+    # https://github.com/jacobalberty/unifi-docker
+    image: jacobalberty/unifi:unifi5
+    environment:
+      TZ: "America/Chicago"
+    volumes:
+     - ./data/unifi/data:/var/lib/unifi
+     - ./data/unifi/logs:/var/log/unifi
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      # Guest portal ports
+      # - "8843:8843"
+      - "3478:3478"
+      - "6789:6789"
+      - "10001:10001"
