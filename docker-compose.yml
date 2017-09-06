@@ -51,3 +51,22 @@ services:
      - "1194:1194/udp"
     volumes:
      - ./data/openvpn/conf:/etc/openvpn
+  samba:
+    container_name: samba
+    image: dperson/samba
+    network_mode: host
+    restart: always
+    command: -r -p -s "Feliciterra Files;/fileshare/shared;yes;no;no;all" -s "Feliciterra Archive;/fileshare/archive;yes;no;no;all"
+    environment:
+      - TZ=America/Chicago
+      - NMDB=1
+      - WORKGROUP=HOMEGROUP
+    ports:
+      - "139:139"
+      - "445:445"
+      - "137:137/udp"
+      - "138:138/udp"
+    volumes:
+      - ./data/samba/conf:/etc/samba
+      - ./data/fileshare/shared:/fileshare/shared
+      - ./data/fileshare/archive:/fileshare/archive
