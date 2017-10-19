@@ -1,1 +1,21 @@
-data/
+data/*
+!data/home-assistant
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Python cache
+__pycache__
+*.pyc
+
+# Other
+*.db
+secrets.yaml
+deps
+tts
