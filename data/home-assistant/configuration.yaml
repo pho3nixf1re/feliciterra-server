@@ -14,11 +14,11 @@ homeassistant:
   customize: !include customize.yaml
 
 zone:
-  name: Feliciterra
-  latitude: !secret latitude_home
-  longitude: !secret longitude_home
-  radius: 125
-  icon: mdi:home
+  - name: Home
+    latitude: !secret latitude_home
+    longitude: !secret longitude_home
+    radius: 125
+    icon: mdi:home-heart
 
 # Enables the frontend
 frontend:
