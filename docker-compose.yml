@@ -21,7 +21,7 @@ services:
     volumes:
       - ./data/unifi/data:/var/lib/unifi
       - ./data/unifi/logs:/var/log/unifi
-      - ./data/letsencrypt:/unifi/cert:ro
+      - ./data/letsencrypt/certs:/unifi/cert:ro
     ports:
       - "8080:8080"
       - "8443:8443"
