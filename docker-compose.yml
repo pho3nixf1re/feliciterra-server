@@ -19,8 +19,9 @@ services:
     network_mode: host
     restart: always
     volumes:
-     - ./data/unifi/data:/var/lib/unifi
-     - ./data/unifi/logs:/var/log/unifi
+      - ./data/unifi/data:/var/lib/unifi
+      - ./data/unifi/logs:/var/log/unifi
+      - ./data/letsencrypt:/unify/cert:ro
     ports:
       - "8080:8080"
       - "8443:8443"
