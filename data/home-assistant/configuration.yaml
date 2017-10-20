@@ -29,8 +29,11 @@ config:
 http:
   # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  # base_url: gateway.feliciterra.com:8123
+  ssl_certificate: /letsencrypt/certs/gateway.feliciterra.com/fullchain.pem
+  ssl_key: /letsencrypt/certs/gateway.feliciterra.com/privkey.pem
+  base_url: gateway.feliciterra.com:8123
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
 
 # Checks for available updates
 # Note: This component will send some information about your system to

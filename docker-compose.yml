@@ -1,13 +1,24 @@
 version: '3'
 services:
+  letsencrypt:
+    container_name: letsencrypt
+    image: csmith/letsencrypt-lexicon:latest
+    restart: always
+    environment:
+      EMAIL: brookeandmatthew@gmail.com
+      PROVIDER: 'dnsimple'
+      ACCEPT_CA_TERMS: 'true'
+      STAGING: 'true'
+    env_file:
+      - .env
+    volumes:
+      - ./data/letsencrypt:/letsencrypt
   unifi:
     container_name: unifi
     # https://github.com/jacobalberty/unifi-docker
     image: jacobalberty/unifi:unifi5
     network_mode: host
     restart: always
-    environment:
-      TZ: America/Chicago
     volumes:
      - ./data/unifi/data:/var/lib/unifi
      - ./data/unifi/logs:/var/log/unifi
@@ -24,9 +35,8 @@ services:
     image: plexinc/pms-docker:plexpass
     network_mode: host
     restart: always
-    environment:
-      TZ: America/Chicago
-      PLEX_CLAIM: claim-G26ZknnQzTZvuJyU1UwP
+    env_file:
+      - .env
     volumes:
       - ./data/plex/config:/config
       - ./data/plex/transcode:/transcode
@@ -58,7 +68,6 @@ services:
     restart: always
     command: -r -p -s "Feliciterra Files;/fileshare/shared;yes;no;no;all" -s "Feliciterra Archive;/fileshare/archive;yes;no;no;all"
     environment:
-      TZ: America/Chicago
       NMDB: "1"
       WORKGROUP: HOMEGROUP
     ports:
@@ -77,7 +86,5 @@ services:
     # ports:
     #   - "8123:8123"
     restart: always
-    environment:
-      TZ: America/Chicago
     volumes:
       - ./data/home-assistant:/config
