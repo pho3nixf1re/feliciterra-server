@@ -8,7 +8,6 @@ services:
       EMAIL: brookeandmatthew@gmail.com
       PROVIDER: 'dnsimple'
       ACCEPT_CA_TERMS: 'true'
-      STAGING: 'true'
     env_file:
       - .env
     volumes:
