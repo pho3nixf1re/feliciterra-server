@@ -88,3 +88,4 @@ services:
     restart: always
     volumes:
       - ./data/home-assistant:/config
+      - ./data/letsencrypt:/letsencrypt:ro
