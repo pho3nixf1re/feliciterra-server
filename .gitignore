@@ -1,12 +1,14 @@
 .env
 
 # Ignore most of the data directory folders
-data/*
+data/unifi
+data/fileshare
+data/openvpn
+data/plex
+data/samba
 
 # Data directory exceptions
-!data/home-assistant
 
-!data/letsencrypt
 data/letsencrypt/certs
 data/letsencrypt/accounts
 
