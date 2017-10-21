@@ -106,3 +106,4 @@ device_tracker:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+shell_command: !include shell_commands.yaml
