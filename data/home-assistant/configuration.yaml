@@ -13,12 +13,7 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-zone:
-  - name: Home
-    latitude: !secret latitude_home
-    longitude: !secret longitude_home
-    radius: 125
-    icon: mdi:home-heart
+zone: !include zones.yaml
 
 # Enables the frontend
 frontend:
@@ -27,7 +22,6 @@ frontend:
 config:
 
 http:
-  # Secrets are defined in the file secrets.yaml
   api_password: !secret http_password
   ssl_certificate: /letsencrypt/certs/gateway.feliciterra.com/fullchain.pem
   ssl_key: /letsencrypt/certs/gateway.feliciterra.com/privkey.pem
