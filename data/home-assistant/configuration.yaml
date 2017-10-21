@@ -93,6 +93,13 @@ media_player:
   - platform: plex
     entity_namespace: 'plex'
 
+device_tracker:
+  - platform: unifi
+    host: gateway.feliciterra.com
+    port: 8443
+    username: !secret unifi_username
+    password: !secret unifi_password
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
