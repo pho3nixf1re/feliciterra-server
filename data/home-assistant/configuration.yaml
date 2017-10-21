@@ -59,7 +59,17 @@ sun:
 
 # Weather prediction
 sensor:
-  - platform: yr
+  - platform: wunderground
+    api_key: f0edc1fd91eaf0f3
+    monitored_conditions:
+      - alerts
+      - temp_c
+      - feelslike_c
+      - heat_index_c
+      - temp_high_1d_c
+      - precip_1d
+      - precip_today_metric
+      - weather_1d_metric
 
 # Text to speech
 tts:
