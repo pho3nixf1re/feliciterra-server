@@ -26,12 +26,12 @@ __pycache__
 *.pyc
 
 # Other
-*.db
+**/*.db
 secrets.yaml
 deps
 tts
-.conf
+**/*.conf
 .uuid
 .HA_VERSION
-.sqlite
-.pickle
+**/*.sqlite
+**/*.pickle
