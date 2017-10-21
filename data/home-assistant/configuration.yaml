@@ -62,7 +62,6 @@ sensor:
   - platform: wunderground
     api_key: f0edc1fd91eaf0f3
     monitored_conditions:
-      - alerts
       - temp_c
       - feelslike_c
       - heat_index_c
