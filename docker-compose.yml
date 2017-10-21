@@ -8,6 +8,7 @@ services:
       EMAIL: brookeandmatthew@gmail.com
       PROVIDER: 'dnsimple'
       ACCEPT_CA_TERMS: 'true'
+      ALGORITHM: rsa
     env_file:
       - .env
     volumes:
