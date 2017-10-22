@@ -1,0 +1,12 @@
+
+# scene 28
+alarm_disarm:
+  url: 'http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=28'
+
+# scene 27
+alarm_arm:
+  url: 'http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=27'
+
+# scene 29
+alarm_stay:
+  url: 'http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=29'

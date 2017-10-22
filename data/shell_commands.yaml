@@ -1,9 +1,0 @@
-
-# scene 28
-alarm_disarm: 'curl http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=28'
-
-# scene 27
-alarm_arm: 'curl http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=27'
-
-# scene 29
-alarm_stay: 'curl http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=29'

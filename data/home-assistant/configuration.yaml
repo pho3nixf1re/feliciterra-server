@@ -104,6 +104,7 @@ device_tracker:
     track_new_devices: false
 
 group: !include groups.yaml
+scene: !include scenes.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-shell_command: !include shell_commands.yaml
+rest_command: !include rest_commands.yaml

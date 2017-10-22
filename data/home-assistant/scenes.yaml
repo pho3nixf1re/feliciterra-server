@@ -1,0 +1,5 @@
+
+- name: Goodnight house
+  entities:
+    group.outdoor_lights: off
+    service: rest_command.alarm_stay
