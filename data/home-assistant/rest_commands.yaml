@@ -1,11 +1,11 @@
 
 # scene 28
 alarm_disarm:
-  url: 'http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=28'
+  url: !secret vera_alarm_disarm
 
 # scene 27
 alarm_arm:
-  url: 'http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=27'
+  url: 'http://10.0.0.100:3480/data_request?id=lu_action&output_format=json&DeviceNum=21&serviceId=urn:micasaverde-com:serviceId:AlarmPartition2&action=RequestArmMode&State=StayInstant'
 
 # scene 29
 alarm_stay:

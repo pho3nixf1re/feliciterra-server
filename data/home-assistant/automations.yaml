@@ -1,1 +1,12 @@
-[]
+- alias: Activating Goodnight
+  trigger:
+    platform: event
+    event_type: call_service
+    event_data:
+      service_data:
+        entity_id: scene.goodnight_house
+      domain: scene
+      service: turn_on
+  action:
+    service: rest_command.alarm_stay
+

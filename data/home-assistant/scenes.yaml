@@ -1,5 +1,7 @@
 
 - name: Goodnight house
   entities:
-    group.outdoor_lights: off
-    service: rest_command.alarm_stay
+    group.all_locks: locked
+    group.all_lights: off
+    media_player.vizio_smartcast: off
+
