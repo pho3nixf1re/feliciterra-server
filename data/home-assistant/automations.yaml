@@ -1,4 +1,5 @@
-- alias: Activating Goodnight
+- id: goodnight
+  alias: Goodnight
   trigger:
     platform: event
     event_type: call_service
@@ -10,3 +11,23 @@
   action:
     service: rest_command.alarm_stay
 
+- id: morning_wakeup
+  alias: Morning wakeup
+  trigger:
+    platform: time
+    at: '06:20:00'
+  action:
+    - service: rest_command.alarm_disarm
+    - service: lock.unlock
+      entity_id: lock.garage_deadbolt_35
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - service: light.turn_on
+      entity_id:
+        - light.under_cabinet_47
+        - light.hallway_lights_14
