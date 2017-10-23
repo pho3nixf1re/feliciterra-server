@@ -11,8 +11,8 @@
   action:
     service: rest_command.alarm_stay
 
-- id: morning_wakeup
-  alias: Morning wakeup
+- id: wakeup
+  alias: Wakeup
   trigger:
     platform: time
     at: '06:20:00'
@@ -31,3 +31,49 @@
       entity_id:
         - light.under_cabinet_47
         - light.hallway_lights_14
+
+- id: evening
+  alias: Evening
+  trigger:
+    platform: time
+    at: '16:45:00'
+  action:
+    service: light.turn_on
+    entity_id:
+      - light.under_cabinet_47
+
+- id: sunrise
+  alias: Sunrise
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: light.turn_off
+    entity_id: group.outdoor_lights
+
+- id: before_sunset
+  alias: Before sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:40:00'
+  action:
+    service: light.turn_on
+    entity_id:
+      - group.outdoor_lights
+      - light.step_lights_48
+      - light.master_bedroom_52
+
+- id: wakeup_teardown
+  alias: Wakeup teardown
+  trigger:
+    platform: time
+    at: '08:20:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
