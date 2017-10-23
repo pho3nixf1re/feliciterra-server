@@ -70,6 +70,12 @@ sensor:
       - precip_today_metric
       - weather_1d_metric
 
+cover:
+  - platform: myq
+    username: !secret liftmaster_username
+    password: !secret liftmaster_password
+    type: liftmaster
+
 # Text to speech
 tts:
   - platform: google
@@ -79,7 +85,7 @@ tts:
 vera:
   vera_controller_url: http://10.0.0.100:3480/
   lights: [13, 14, 41, 33, 34, 27, 47, 48, 52]
-  exclude: [39, 43, 11, 45, 10]
+  exclude: [39, 43, 11, 45, 10, 53, 54]
 
 lyric:
   client_id: !secret lyric_client_id
