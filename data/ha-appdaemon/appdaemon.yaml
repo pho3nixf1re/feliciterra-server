@@ -4,10 +4,18 @@ AppDaemon:
   threads: 10
 
 HASS:
-  ha_url: secret
-  ha_key: secret
+  ha_url: https://gateway.feliciterra.com:8123
+  ha_key: !secret ha_key
 
 # Apps
 hello_world:
   module: hello
   class: HelloWorld
+
+HADashboard:
+  dash_url: https://gateway.feliciterra.com:5050
+  dash_ssl_certificate: /letsencrypt/fullchain.pem
+  dash_ssl_key: /letsencrypt/privkey.pem
+  # this is temporarily broken, watch for updates in future releases
+  # dash_password: !secret dash_password
+  dash_compile_on_start: 1

@@ -23,8 +23,8 @@ config:
 
 http:
   api_password: !secret http_password
-  ssl_certificate: /letsencrypt/certs/gateway.feliciterra.com/fullchain.pem
-  ssl_key: /letsencrypt/certs/gateway.feliciterra.com/privkey.pem
+  ssl_certificate: /letsencrypt/fullchain.pem
+  ssl_key: /letsencrypt/privkey.pem
   base_url: gateway.feliciterra.com:8123
   ip_ban_enabled: true
   login_attempts_threshold: 5
