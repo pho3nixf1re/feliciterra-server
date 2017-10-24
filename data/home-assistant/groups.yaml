@@ -48,7 +48,7 @@ outlets:
 
 alarm_zones:
   name: Alarm zones
-  entities
+  entities:
     - switch.zone____01_15
     - switch.zone____02_16
     - switch.zone____03_23
