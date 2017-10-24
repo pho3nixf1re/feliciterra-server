@@ -88,7 +88,7 @@ vera:
   exclude: [39, 43, 11, 45, 10, 53, 54]
 
 zwave:
-  usb: /dev/zwave
+  usb_path: /dev/zwave
   network_key: !secret zwave_network_key
   polling_interval: 30000
 
