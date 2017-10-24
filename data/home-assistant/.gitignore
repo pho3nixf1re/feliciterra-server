@@ -6,6 +6,9 @@ tts
 .HA_VERSION
 *.pickle
 
+*.db-shm
+*.db-wal
+
 # unifi device tracker
 known_devices.yaml
 
