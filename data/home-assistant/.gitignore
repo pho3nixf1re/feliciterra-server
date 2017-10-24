@@ -1,0 +1,15 @@
+**/*.db
+secrets.yaml
+deps
+tts
+*.conf
+.uuid
+.HA_VERSION
+*.pickle
+
+# unifi device tracker
+known_devices.yaml
+
+# zwave system
+*.xml
+*.txt

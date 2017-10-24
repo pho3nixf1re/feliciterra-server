@@ -25,13 +25,4 @@ pids
 __pycache__
 *.pyc
 
-# Other
-**/*.db
-secrets.yaml
-deps
-tts
-**/*.conf
-.uuid
-.HA_VERSION
-**/*.sqlite
-**/*.pickle
+*.sqlite
