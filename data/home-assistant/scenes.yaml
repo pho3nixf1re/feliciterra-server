@@ -2,6 +2,7 @@
 - name: Goodnight house
   entities:
     group.all_locks: locked
-    group.all_lights: off
+    group.indoor_lights: off
+    group.outdoor_lights: off
     group.garage_doors: closed
     media_player.vizio_smartcast: off
