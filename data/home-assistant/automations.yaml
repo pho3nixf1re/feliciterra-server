@@ -82,3 +82,25 @@
       - light.under_cabinet_47
       - light.hallway_lights_14
       - light.step_lights_48
+
+- id: left_garage_door_timeout
+  alias: Left garage door timeout
+  trigger:
+    platform: state
+    entity_id: cover.left_door
+  action:
+    - delay:
+      minutes: 10
+    - service: cover.close_cover
+      entity_id: cover.left_door
+
+- id: right_garage_door_timeout
+  alias: Right garage door timeout
+  trigger:
+    platform: state
+    entity_id: cover.right_door
+  action:
+    - delay:
+      minutes: 10
+    - service: cover.close_cover
+      entity_id: cover.right_door
