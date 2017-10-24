@@ -84,14 +84,12 @@ tts:
 
 vera:
   vera_controller_url: http://10.0.0.100:3480/
-  lights: [13, 14, 41, 33, 34, 27, 47, 48, 52]
-  exclude: [39, 43, 11, 45, 10, 53, 54]
 
 zwave:
   usb_path: /dev/zwave
   network_key: !secret zwave_network_key
   polling_interval: 60000
-  device_config: !include zwave_devices.yaml
+  device_config: !include zwave_device_config.yaml
 
 lyric:
   client_id: !secret lyric_client_id
