@@ -25,4 +25,5 @@ pids
 __pycache__
 *.pyc
 
-*.sqlite
+**/*.db
+**/*.sqlite
