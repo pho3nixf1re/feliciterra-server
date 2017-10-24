@@ -57,11 +57,13 @@
     event: sunset
     offset: '-00:40:00'
   action:
-    service: light.turn_on, switch.turn_on
-    entity_id:
-      - group.outdoor_lights
-      - switch.step_lights_switch
-      - light.master_bedroom_lamp_level
+    - service: switch.turn_on
+      entity_id:
+        - group.outdoor_lights
+        - switch.step_lights_switch
+    - service: light.turn_on
+      entity_id:
+        - light.master_bedroom_lamp_level
 
 - id: wakeup_teardown
   alias: Wakeup teardown
