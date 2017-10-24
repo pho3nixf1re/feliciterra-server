@@ -90,7 +90,7 @@
     entity_id: cover.left_door
   action:
     - delay:
-      minutes: 10
+        minutes: 10
     - service: cover.close_cover
       entity_id: cover.left_door
 
@@ -101,6 +101,6 @@
     entity_id: cover.right_door
   action:
     - delay:
-      minutes: 10
+        minutes: 10
     - service: cover.close_cover
       entity_id: cover.right_door
