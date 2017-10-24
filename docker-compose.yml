@@ -78,6 +78,8 @@ services:
     # ports:
     #   - "8123:8123"
     restart: always
+    devices:
+      - /dev/zwave:/dev/zwave
     volumes:
       - ./data/home-assistant:/config
       - ./data/letsencrypt:/letsencrypt:ro
