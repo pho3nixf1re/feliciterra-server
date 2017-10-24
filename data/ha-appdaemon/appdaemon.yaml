@@ -1,0 +1,13 @@
+AppDaemon:
+  logfile: STDOUT
+  errorfile: STDERR
+  threads: 10
+
+HASS:
+  ha_url: secret
+  ha_key: secret
+
+# Apps
+hello_world:
+  module: hello
+  class: HelloWorld

@@ -83,3 +83,16 @@ services:
     volumes:
       - ./data/home-assistant:/config
       - ./data/letsencrypt:/letsencrypt:ro
+  ha-appdaemon:
+    container_name: ha-appdaemon
+    image: acockburn/appdaemon
+    restart: always
+    ports:
+      - 5050:5050
+    environment:
+      HA_URL: 'https://gateway.feliciterra.com:8123'
+      HA_DASH: 'http://10.0.0.110:5050'
+    env_file:
+      - .env
+    volumes:
+      - ./data/ha-appdaemon:/conf
