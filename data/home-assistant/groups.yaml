@@ -9,8 +9,14 @@ weather_overview:
     - sensor.pws_precip_today_metric
     - sensor.pws_weather_1d_metric
 
+garage_doors:
+  name: Garage doors
+  entities:
+    - cover.left_door
+    - cover.right_door
+
 outdoor_lights:
   name: Outdoor lights
   entities:
-    - light.outside_garage_light_33
-    - light.porch_lights_27
+    - light.outdoor_garage_lights
+    - light.front_porch_lights
