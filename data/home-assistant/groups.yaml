@@ -9,6 +9,12 @@ weather_overview:
     - sensor.pws_precip_today_metric
     - sensor.pws_weather_1d_metric
 
+doors:
+  name: Doors
+  entities:
+    - lock.front_door_locked
+    - lock.garage_door_locked
+
 garage_doors:
   name: Garage doors
   entities:
@@ -18,5 +24,24 @@ garage_doors:
 outdoor_lights:
   name: Outdoor lights
   entities:
-    - light.outdoor_garage_lights
-    - light.front_porch_lights
+    - switch.outdoor_garage_lights_switch
+    - switch.front_porch_lights_switch
+
+indoor_lights:
+  name: Indoor lights
+  entities:
+    - light.master_bedroom_lamp_level
+    - switch.front_porch_lights_switch
+    - switch.great_room_center_lights_switch
+    - switch.kitchen_cabinet_lights_switch
+    - switch.library_lights_switch
+    - switch.mudroom_hallway_lights_switch
+    - switch.outdoor_garage_lights_switch
+    - switch.play_room_lights_switch
+    - switch.step_lights_switch
+
+outlets:
+  name: Outlets
+  entities:
+    - switch.foyer_plug_switch
+    - switch.kitchen_plug_switch

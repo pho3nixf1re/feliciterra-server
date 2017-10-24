@@ -19,7 +19,7 @@
   action:
     - service: rest_command.alarm_disarm
     - service: lock.unlock
-      entity_id: lock.garage_deadbolt_35
+      entity_id: lock.garage_door_locked
     - condition: time
       weekday:
         - mon
@@ -29,8 +29,8 @@
         - fri
     - service: light.turn_on
       entity_id:
-        - light.under_cabinet_47
-        - light.hallway_lights_14
+        - switch.kitchen_cabinet_lights_switch
+        - switch.mudroom_hallway_lights_switch
 
 - id: evening
   alias: Evening
@@ -39,7 +39,7 @@
     at: '16:45:00'
   action:
     service: light.turn_on
-    entity_id: light.under_cabinet_47
+    entity_id: switch.kitchen_cabinet_lights_switch
 
 - id: sunrise
   alias: Sunrise
@@ -60,8 +60,8 @@
     service: light.turn_on
     entity_id:
       - group.outdoor_lights
-      - light.step_lights_48
-      - light.master_bedroom_52
+      - switch.step_lights_switch
+      - light.master_bedroom_lamp_level
 
 - id: wakeup_teardown
   alias: Wakeup teardown
@@ -79,9 +79,9 @@
   action:
     service: light.turn_off
     entity_id:
-      - light.under_cabinet_47
-      - light.hallway_lights_14
-      - light.step_lights_48
+      - switch.kitchen_cabinet_lights_switch
+      - switch.mudroom_hallway_lights_switch
+      - switch.step_lights_switch
 
 - id: left_garage_door_timeout
   alias: Left garage door timeout
