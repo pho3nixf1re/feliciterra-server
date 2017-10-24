@@ -31,12 +31,10 @@ indoor_lights:
   name: Indoor lights
   entities:
     - light.master_bedroom_lamp_level
-    - switch.front_porch_lights_switch
     - switch.great_room_center_lights_switch
     - switch.kitchen_cabinet_lights_switch
     - switch.library_lights_switch
     - switch.mudroom_hallway_lights_switch
-    - switch.outdoor_garage_lights_switch
     - switch.play_room_lights_switch
     - switch.step_lights_switch
 
