@@ -45,3 +45,16 @@ outlets:
   entities:
     - switch.foyer_plug_switch
     - switch.kitchen_plug_switch
+
+alarm_zones:
+  name: Alarm zones
+  entities
+    - switch.zone____01_15
+    - switch.zone____02_16
+    - switch.zone____03_23
+    - switch.zone____04_18
+    - switch.zone____05_19
+    - switch.zone____06_20
+    - switch.zone____07_25
+    - switch.zone____08_26
+    - switch.zone____17_24
