@@ -31,12 +31,13 @@
         - climate.playroom
         - climate.mudroom_hall
         - climate.roll_tide_hall
-      temperature: >-
-        {%- if states.sensor.pws_temp_high_1d_c.state|int < 74 -%}
-          70
-        {%- else -%}
-          77
-        {%- endif -%}
+      data_template:
+        temperature: >-
+          {%- if states('sensor.pws_temp_high_1d_c') | int < 74 -%}
+            70
+          {%- else -%}
+            77
+          {%- endif -%}
     - condition: time
       weekday:
         - mon
