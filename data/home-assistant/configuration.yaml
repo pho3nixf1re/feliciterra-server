@@ -121,3 +121,5 @@ scene: !include scenes.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 rest_command: !include rest_commands.yaml
+
+input_boolean: !include input_booleans.yaml
