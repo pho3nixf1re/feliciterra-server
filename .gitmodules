@@ -1,0 +1,3 @@
+[submodule "data/ha-appdaemon/apps/occusim"]
+	path = data/ha-appdaemon/apps/occusim
+	url = git@github.com:acockburn/occusim.git
