@@ -9,4 +9,4 @@ alarm_arm:
 
 # scene 29
 alarm_stay:
-  url: 'http://10.0.0.100:3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=RunScene&SceneNum=29'
+  url: 'http://10.0.0.100:3480/data_request?id=lu_action&output_format=json&DeviceNum=21&serviceId=urn:micasaverde-com:serviceId:AlarmPartition2&action=RequestArmMode&State=StayInstant'
