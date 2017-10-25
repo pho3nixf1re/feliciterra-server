@@ -45,6 +45,7 @@ outlets:
     - switch.kitchen_plug_switch
 
 climate_control:
+  name: Climate control
   entities:
     - climate.playroom
     - climate.mudroom_hall
