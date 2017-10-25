@@ -44,6 +44,12 @@ outlets:
     - switch.foyer_plug_switch
     - switch.kitchen_plug_switch
 
+climate_control:
+  entities:
+    - climate.playroom
+    - climate.mudroom_hall
+    - climate.roll_tide_hall
+
 alarm_zones:
   name: Alarm zones
   entities:
