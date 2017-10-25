@@ -123,3 +123,16 @@
         minutes: 10
     - service: cover.close_cover
       entity_id: cover.right_door
+
+- id: front_door_lock_timeout
+  alias: Front door lock timeout
+  trigger:
+    platform: state
+    entity_id: lock.front_door_locked
+    from: 'locked'
+    to: 'unlocked'
+  action:
+    - delay:
+        minutes: 10
+    - service: lock.lock
+      entity_id: lock.front_door_locked
