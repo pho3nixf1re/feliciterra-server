@@ -9,7 +9,13 @@
       domain: scene
       service: turn_on
   action:
-    service: rest_command.alarm_stay
+    - service: rest_command.alarm_stay
+    - service: climate.set_temperature
+      entity_id:
+        - climate.playroom
+        - climate.mudroom_hall
+        - climate.roll_tide_hall
+      temperature: 74
 
 - id: wakeup
   alias: Wakeup
@@ -20,6 +26,17 @@
     - service: rest_command.alarm_disarm
     - service: lock.unlock
       entity_id: lock.garage_door_locked
+    - service: climate.set_temperature
+      entity_id:
+        - climate.playroom
+        - climate.mudroom_hall
+        - climate.roll_tide_hall
+      temperature: >-
+        {%- if states.sensor.pws_temp_high_1d_c.state|int < 74 -%}
+          70
+        {%- else -%}
+          77
+        {%- endif -%}
     - condition: time
       weekday:
         - mon
@@ -38,8 +55,11 @@
     platform: time
     at: '16:45:00'
   action:
-    service: switch.turn_on
-    entity_id: switch.kitchen_cabinet_lights_switch
+    - service: switch.turn_on
+      entity_id: switch.kitchen_cabinet_lights_switch
+    - service: climate.set_temperature
+      entity_id: climate.playroom
+      temperature: 75
 
 - id: sunrise
   alias: Sunrise
