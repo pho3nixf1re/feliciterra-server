@@ -11,10 +11,7 @@
   action:
     - service: rest_command.alarm_stay
     - service: climate.set_temperature
-      entity_id:
-        - climate.playroom
-        - climate.mudroom_hall
-        - climate.roll_tide_hall
+      entity_id: group.climate_control
       temperature: 74
 
 - id: wakeup
@@ -27,10 +24,7 @@
     - service: lock.unlock
       entity_id: lock.garage_door_locked
     - service: climate.set_temperature
-      entity_id:
-        - climate.playroom
-        - climate.mudroom_hall
-        - climate.roll_tide_hall
+      entity_id: group.climate_control
       data_template:
         temperature: >-
           {%- if states('sensor.pws_temp_high_1d_c') | int < 74 -%}
@@ -60,7 +54,7 @@
       entity_id: switch.kitchen_cabinet_lights_switch
     - service: climate.set_temperature
       entity_id: climate.playroom
-      temperature: 75
+      temperature: 74
 
 - id: sunrise
   alias: Sunrise
