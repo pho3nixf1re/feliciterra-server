@@ -13,7 +13,9 @@
     - service: climate.set_temperature
       data:
         entity_id: group.climate_control
-        temperature: 74
+        target_temp_high: 74
+        target_temp_low: 68
+        set_operation_mode: auto
 
 - id: wakeup
   alias: Wakeup
@@ -25,14 +27,12 @@
     - service: lock.unlock
       entity_id: lock.garage_door_locked
     - service: climate.set_temperature
-      data_template:
+      data:
         entity_id: group.climate_control
-        temperature: >-
-          {%- if states('sensor.pws_temp_high_1d_c') | int < 74 -%}
-            70
-          {%- else -%}
-            77
-          {%- endif -%}
+        temperature:
+          target_temp_high: 77
+          target_temp_low: 72
+          set_operation_mode: auto
     - condition: time
       weekday:
         - mon
@@ -56,7 +56,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.playroom
-        temperature: 74
+        target_temp_high: 74
+        target_temp_low: 68
+        set_operation_mode: auto
 
 - id: sunrise
   alias: Sunrise
