@@ -11,14 +11,23 @@
   action:
     - service: rest_command.alarm_stay
     - service: climate.set_temperature
-      data:
+      data_template:
         entity_id: group.climate_control
-        target_temp_high: 74
-        target_temp_low: 68
+        temperature: >-
+          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+            74
+          {%- else -%}
+            70
+          {%- endif -%}
     - service: climate.set_operation_mode
-      data:
+      data_template:
         entity_id: climate.playroom
-        operation_mode: auto
+        operation_mode: >-
+          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+            cool
+          {%- else -%}
+            heat
+          {%- endif -%}
 
 - id: wakeup
   alias: Wakeup
@@ -30,15 +39,23 @@
     - service: lock.unlock
       entity_id: lock.garage_door_locked
     - service: climate.set_temperature
-      data:
+      data_template:
         entity_id: group.climate_control
-        temperature:
-          target_temp_high: 77
-          target_temp_low: 72
+        temperature: >-
+          {%- if states('sensor.pws_temp_high_1d_c') | int > 73 -%}
+            77
+          {%- else -%}
+            74
+          {%- endif -%}
     - service: climate.set_operation_mode
-      data:
+      data_template:
         entity_id: climate.playroom
-        operation_mode: auto
+        operation_mode: >-
+          {%- if states('sensor.pws_temp_high_1d_c') | int > 73 -%}
+            cool
+          {%- else -%}
+            heat
+          {%- endif -%}
     - condition: time
       weekday:
         - mon
@@ -60,14 +77,23 @@
     - service: switch.turn_on
       entity_id: switch.kitchen_cabinet_lights_switch
     - service: climate.set_temperature
-      data:
+      data_template:
         entity_id: climate.playroom
-        target_temp_high: 74
-        target_temp_low: 68
+        temperature: >-
+          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+            74
+          {%- else -%}
+            70
+          {%- endif -%}
     - service: climate.set_operation_mode
-      data:
+      data_template:
         entity_id: climate.playroom
-        operation_mode: auto
+        operation_mode: >-
+          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+            cool
+          {%- else -%}
+            heat
+          {%- endif -%}
 
 - id: sunrise
   alias: Sunrise
