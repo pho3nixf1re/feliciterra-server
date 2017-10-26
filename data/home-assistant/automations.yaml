@@ -42,7 +42,7 @@
       data_template:
         entity_id: group.climate_control
         temperature: >-
-          {%- if states('sensor.pws_temp_high_1d_c') | int > 73 -%}
+          {%- if states('sensor.pws_temp_high_1d_c') | int > 74 -%}
             77
           {%- else -%}
             74
@@ -51,7 +51,7 @@
       data_template:
         entity_id: climate.playroom
         operation_mode: >-
-          {%- if states('sensor.pws_temp_high_1d_c') | int > 73 -%}
+          {%- if states('sensor.pws_temp_high_1d_c') | int > 74 -%}
             cool
           {%- else -%}
             heat
