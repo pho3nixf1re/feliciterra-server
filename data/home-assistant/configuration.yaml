@@ -62,13 +62,13 @@ sensor:
   - platform: wunderground
     api_key: f0edc1fd91eaf0f3
     monitored_conditions:
-      - temp_c
-      - feelslike_c
-      - heat_index_c
-      - temp_high_1d_c
+      - temp_f
+      - feelslike_f
+      - heat_index_f
+      - temp_high_1d_f
+      - temp_low_1d_f
       - precip_1d
-      - precip_today_metric
-      - weather_1d_metric
+      - weather_1d
 
 cover:
   - platform: myq

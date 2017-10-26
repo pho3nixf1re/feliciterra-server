@@ -14,7 +14,7 @@
       data_template:
         entity_id: group.climate_control
         temperature: >-
-          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
             74
           {%- else -%}
             70
@@ -23,7 +23,7 @@
       data_template:
         entity_id: climate.playroom
         operation_mode: >-
-          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
             cool
           {%- else -%}
             heat
@@ -42,7 +42,7 @@
       data_template:
         entity_id: group.climate_control
         temperature: >-
-          {%- if states('sensor.pws_temp_high_1d_c') | int > 74 -%}
+          {%- if states('sensor.pws_temp_high_1d_f') | int > 74 -%}
             77
           {%- else -%}
             74
@@ -51,7 +51,7 @@
       data_template:
         entity_id: climate.playroom
         operation_mode: >-
-          {%- if states('sensor.pws_temp_high_1d_c') | int > 74 -%}
+          {%- if states('sensor.pws_temp_high_1d_f') | int > 74 -%}
             cool
           {%- else -%}
             heat
@@ -80,7 +80,7 @@
       data_template:
         entity_id: climate.playroom
         temperature: >-
-          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
             74
           {%- else -%}
             70
@@ -89,7 +89,7 @@
       data_template:
         entity_id: climate.playroom
         operation_mode: >-
-          {%- if states('sensor.pws_temp_low_1d_c') | int > 69 -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
             cool
           {%- else -%}
             heat
