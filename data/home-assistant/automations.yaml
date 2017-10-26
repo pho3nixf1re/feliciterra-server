@@ -15,7 +15,10 @@
         entity_id: group.climate_control
         target_temp_high: 74
         target_temp_low: 68
-        set_operation_mode: auto
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.playroom
+        operation_mode: auto
 
 - id: wakeup
   alias: Wakeup
@@ -32,7 +35,10 @@
         temperature:
           target_temp_high: 77
           target_temp_low: 72
-          set_operation_mode: auto
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.playroom
+        operation_mode: auto
     - condition: time
       weekday:
         - mon
@@ -58,7 +64,10 @@
         entity_id: climate.playroom
         target_temp_high: 74
         target_temp_low: 68
-        set_operation_mode: auto
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.playroom
+        operation_mode: auto
 
 - id: sunrise
   alias: Sunrise
