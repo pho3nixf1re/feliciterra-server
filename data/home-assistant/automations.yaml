@@ -115,10 +115,11 @@
       entity_id:
         - group.outdoor_lights
         - switch.step_lights_switch
-      brightness_pct: 100
     - service: light.turn_on
-      entity_id:
-        - light.master_bedroom_lamp_level
+      data:
+        entity_id:
+          - light.master_bedroom_lamp_level
+        brightness_pct: 100
 
 - id: wakeup_teardown
   alias: Wakeup teardown
