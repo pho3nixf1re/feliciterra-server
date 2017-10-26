@@ -95,9 +95,10 @@ lyric:
   client_id: !secret lyric_client_id
   client_secret: !secret lyric_client_secret
 
-usps:
-  username: !secret usps_username
-  password: !secret usps_password
+# TODO: fix usps integration, it's unstable
+# usps:
+#   username: !secret usps_username
+#   password: !secret usps_password
 
 media_player:
   - platform: plex
