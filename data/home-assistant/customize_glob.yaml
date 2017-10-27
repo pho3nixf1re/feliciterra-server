@@ -1,6 +1,3 @@
-sensor.pws_*:
-  hidden: true
-
 sensor.front_door_*:
   hidden: true
 sensor.garage_door_*:

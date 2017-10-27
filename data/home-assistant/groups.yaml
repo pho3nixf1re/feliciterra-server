@@ -4,6 +4,8 @@ default_view:
   icon: mdi:home
   entities:
     - group.weather_overview
+    - input_boolean.vacation
+    - group.presence
 
 Everything:
   view: yes
@@ -80,3 +82,15 @@ alarm_zones:
     - switch.zone____07_25
     - switch.zone____08_26
     - switch.zone____17_24
+
+door_sensors:
+  entities:
+    - binary_sensor.zone____01_15
+    - binary_sensor.zone____02_16
+    - binary_sensor.zone____03_23
+    - binary_sensor.zone____17_24
+
+presence:
+  entities:
+    - device_tracker.brooke_phone
+    - device_tracker.matt_phone

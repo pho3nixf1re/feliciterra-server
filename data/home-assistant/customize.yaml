@@ -48,6 +48,3 @@ device_tracker.brooke_phone:
   friendly_name: Brooke's phone
 device_tracker.matt_phone:
   friendly_name: Matt's phone
-
-input_boolean.away:
-  hidden: true
