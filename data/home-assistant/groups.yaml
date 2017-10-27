@@ -90,7 +90,7 @@ door_sensors:
     - binary_sensor.zone____03_23
     - binary_sensor.zone____17_24
 
-presence:
+Presence:
   entities:
     - device_tracker.brooke_phone
     - device_tracker.matt_phone
