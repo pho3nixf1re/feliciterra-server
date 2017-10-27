@@ -1,3 +1,21 @@
+default_view:
+  view: yes
+  name: Home
+  icon: mdi:home
+  entities:
+    - group.weather_overview
+
+Everything:
+  view: yes
+  entities:
+    - group.doors
+    - group.garage_doors
+    - group.outdoor_lights
+    - group.indoor_lights
+    - group.outlets
+    - group.climate_control
+    - group.alarm_zones
+
 weather_overview:
   name: Weather overview
   entities:
