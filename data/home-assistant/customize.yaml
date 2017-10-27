@@ -4,6 +4,8 @@ binary_sensor.zone____02_16:
   friendly_name: pool bathroom door
 binary_sensor.zone____03_23:
   friendly_name: back door
+binary_sensor.zone____17_24:
+  friendly_name: garage door
 binary_sensor.zone____04_18:
   hidden: true
   friendly_name: great room glass break
@@ -19,9 +21,6 @@ binary_sensor.zone____07_25:
 binary_sensor.zone____08_26:
   hidden: true
   friendly_name: master bedroom glass break
-binary_sensor.zone____17_24:
-  hidden: true
-  friendly_name: garage door
 
 switch.zone____01_15:
   friendly_name: front door
@@ -41,3 +40,11 @@ switch.zone____08_26:
   friendly_name: master bedroom glass break
 switch.zone____17_24:
   friendly_name: garage door
+
+sun.sun:
+  hidden: true
+
+device_tracker.brooke_phone:
+  friendly_name: Brooke's phone
+device_tracker.matt_phone:
+  friendly_name: Matt's phone
