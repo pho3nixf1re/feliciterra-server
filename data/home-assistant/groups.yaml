@@ -4,7 +4,7 @@ default_view:
   icon: mdi:home
   entities:
     - group.weather_overview
-    - input_boolean.vacation
+    - group.home_states
     - group.presence
 
 Everything:
@@ -91,3 +91,9 @@ door_sensors:
     - binary_sensor.zone____17_24
 
 Presence: device_tracker.brooke_phone, device_tracker.matt_phone
+
+home_states:
+  name: Home states
+  entities:
+    - input_boolean.vacation
+    - input_boolean.away
