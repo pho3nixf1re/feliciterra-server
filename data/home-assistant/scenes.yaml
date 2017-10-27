@@ -18,4 +18,5 @@
 - name: Coming home
   entities:
     lock.garage_door_locked: unlocked
+    switch.mudroom_hallway_lights_switch: on
     input_boolean.away: off
