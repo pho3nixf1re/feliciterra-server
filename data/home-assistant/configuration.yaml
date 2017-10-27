@@ -74,7 +74,7 @@ sensor:
     name: SSL cert expiry
     unit_of_measurement: days
     scan_interval: 10800
-    command: "/usr/src/app/ssl-cert-check -b -c /letsencrypt/fullchain.pem | awk '{ print $NF }'"
+    command: "/config/ssl-cert-check -b -c /letsencrypt/fullchain.pem | awk '{ print $NF }'"
 
 cover:
   - platform: myq
