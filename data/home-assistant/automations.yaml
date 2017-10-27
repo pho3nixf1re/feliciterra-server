@@ -199,15 +199,51 @@
   action:
     - service: rest_command.alarm_arm
 
-- id: coming_home
+- id: returning_home
   alias: Coming home
   trigger:
     platform: event
     event_type: call_service
     event_data:
       service_data:
-        entity_id: scene.coming_home
+        entity_id: scene.returning_home
       domain: scene
       service: turn_on
   action:
     - service: rest_command.alarm_disarm
+
+- id: leaving
+  trigger:
+    # Delayed action for router-based tracker to prevent false positives.
+    - platform: state
+      entity_id:
+        - device_tracker.brooke_phone
+        - device_tracker.matt_phone
+      from: home
+      to: not_home
+      for: '00:10:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.brooke_phone
+        state: not_home
+      - condition: state
+        entity_id: device_tracker.matt_phone
+        state: not_home
+  action:
+    service: scene.turn_on
+    entity_id: scene.leaving_home
+
+- id: returning
+  trigger:
+    # Delayed action for router-based tracker to prevent false positives.
+    - platform: state
+      entity_id:
+        - device_tracker.brooke_phone
+        - device_tracker.matt_phone
+      from: not_home
+      to: home
+  action:
+    service: scene.turn_on
+    entity_id: scene.returning_home

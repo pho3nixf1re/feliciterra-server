@@ -16,7 +16,7 @@
     switch.mudroom_hallway_lights_switch: off
     input_boolean.away: on
 
-- name: Coming home
+- name: Returning home
   entities:
     lock.garage_door_locked: unlocked
     switch.mudroom_hallway_lights_switch: on
