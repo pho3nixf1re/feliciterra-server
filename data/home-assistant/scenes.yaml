@@ -6,3 +6,16 @@
     group.outdoor_lights: off
     group.garage_doors: closed
     media_player.vizio_smartcast: off
+
+- name: Leaving home
+  entities:
+    group.all_locks: locked
+    group.garage_doors: closed
+    media_player.vizio_smartcast: off
+    switch.mudroom_hallway_lights_switch: off
+    input_boolean.away: on
+
+- name: Coming home
+  entities:
+    lock.garage_door_locked: unlocked
+    input_boolean.away: off

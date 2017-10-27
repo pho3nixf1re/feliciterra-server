@@ -2,3 +2,8 @@ vacation:
   name: Vacation
   initial: off
   icon: mdi:beach
+
+away:
+  name: Away
+  initial: off
+  icon: mdi:home-outline
