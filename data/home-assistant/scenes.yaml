@@ -9,7 +9,8 @@
 
 - name: Leaving home
   entities:
-    group.all_locks: locked
+    lock.front_door_locked: locked
+    lock.garage_door_locked: locked
     group.garage_doors: closed
     media_player.vizio_smartcast: off
     switch.mudroom_hallway_lights_switch: off
