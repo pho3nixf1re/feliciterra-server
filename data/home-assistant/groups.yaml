@@ -6,11 +6,11 @@ default_view:
     - group.weather_overview
     - group.scenes
     - group.home_states
-    - group.presence
 
 Everything:
   view: yes
   entities:
+    - group.presence
     - group.doors
     - group.garage_doors
     - group.outdoor_lights

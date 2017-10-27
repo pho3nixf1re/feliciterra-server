@@ -48,3 +48,9 @@ device_tracker.brooke_phone:
   friendly_name: Brooke's phone
 device_tracker.matt_phone:
   friendly_name: Matt's phone
+device_tracker.kathy_phone:
+  friendly_name: Kathy's phone
+device_tracker.milton_phone:
+  friendly_name: Milton's phone
+device_tracker.esther_phone:
+  friendly_name: Esther's phone
