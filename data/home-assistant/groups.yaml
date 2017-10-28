@@ -18,6 +18,7 @@ Everything:
     - group.outlets
     - group.climate_control
     - group.alarm_zones
+    - group.all_automations
 
 Weather overview:
   entities:
