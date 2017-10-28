@@ -127,7 +127,7 @@ notify:
   - name: webapp
     platform: html5
     gcm_api_key: !secret google_cloud_messenger_key
-    gcm_sender_id: !secret google_cloud_messenge_id
+    gcm_sender_id: !secret google_cloud_messenger_id
 
 group: !include groups.yaml
 scene: !include scenes.yaml
