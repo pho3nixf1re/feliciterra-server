@@ -20,88 +20,70 @@ Everything:
     - group.alarm_zones
     - group.all_automations
 
-Weather overview:
-  entities:
-    - sensor.pws_weather_1d
-    - sensor.pws_precip_1d
-    - sensor.pws_temp_high_1d_f
-    - sensor.pws_temp_f
-    - sensor.pws_feelslike_f
-    - sensor.pws_heat_index_f
+Weather_overview:
+  - sensor.pws_weather_1d
+  - sensor.pws_precip_1d
+  - sensor.pws_temp_high_1d_f
+  - sensor.pws_temp_f
+  - sensor.pws_feelslike_f
+  - sensor.pws_heat_index_f
 
-doors:
-  name: Doors
-  entities:
-    - lock.front_door_locked
-    - lock.garage_door_locked
+Doors:
+  - lock.front_door_locked
+  - lock.garage_door_locked
 
-garage_doors:
-  name: Garage doors
-  entities:
-    - cover.left_door
-    - cover.right_door
+Garage_doors:
+  - cover.left_door
+  - cover.right_door
 
-outdoor_lights:
-  name: Outdoor lights
-  entities:
-    - switch.outdoor_garage_lights_switch
-    - switch.front_porch_lights_switch
+Outdoor_lights:
+  - switch.outdoor_garage_lights_switch
+  - switch.front_porch_lights_switch
 
-indoor_lights:
-  name: Indoor lights
-  entities:
-    - light.master_bedroom_lamp_level
-    - switch.great_room_center_lights_switch
-    - switch.kitchen_cabinet_lights_switch
-    - switch.library_lights_switch
-    - switch.mudroom_hallway_lights_switch
-    - switch.play_room_lights_switch
-    - switch.step_lights_switch
+Indoor_lights:
+  - light.master_bedroom_lamp_level
+  - switch.great_room_center_lights_switch
+  - switch.kitchen_cabinet_lights_switch
+  - switch.library_lights_switch
+  - switch.mudroom_hallway_lights_switch
+  - switch.play_room_lights_switch
+  - switch.step_lights_switch
 
-outlets:
-  name: Outlets
-  entities:
-    - switch.foyer_plug_switch
-    - switch.kitchen_plug_switch
+Outlets:
+  - switch.foyer_plug_switch
+  - switch.kitchen_plug_switch
 
-climate_control:
-  name: Climate control
-  entities:
-    - climate.playroom
-    - climate.mudroom_hall
-    - climate.roll_tide_hall
+Climate_control:
+  - climate.playroom
+  - climate.mudroom_hall
+  - climate.roll_tide_hall
 
-alarm_zones:
-  name: Alarm zones
-  entities:
-    - switch.zone____01_15
-    - switch.zone____02_16
-    - switch.zone____03_23
-    - switch.zone____04_18
-    - switch.zone____05_19
-    - switch.zone____06_20
-    - switch.zone____07_25
-    - switch.zone____08_26
-    - switch.zone____17_24
+Alarm_zones:
+  - switch.zone____01_15
+  - switch.zone____02_16
+  - switch.zone____03_23
+  - switch.zone____04_18
+  - switch.zone____05_19
+  - switch.zone____06_20
+  - switch.zone____07_25
+  - switch.zone____08_26
+  - switch.zone____17_24
 
-door_sensors:
-  name: Door sensors
-  entities:
-    - binary_sensor.zone____01_15
-    - binary_sensor.zone____02_16
-    - binary_sensor.zone____03_23
-    - binary_sensor.zone____17_24
+Door_sensors:
+  - binary_sensor.zone____01_15
+  - binary_sensor.zone____02_16
+  - binary_sensor.zone____03_23
+  - binary_sensor.zone____17_24
 
 Presence:
-  entities:
-    - device_tracker.brooke_phone
-    - device_tracker.matt_phone
-    - device_tracker.kathy_phone
-    - device_tracker.esther_phone
-    - device_tracker.milton_phone
+  - device_tracker.brooke_phone
+  - device_tracker.matt_phone
+  - device_tracker.kathy_phone
+  - device_tracker.esther_phone
+  - device_tracker.milton_phone
 
-home_states:
-  name: Home states
+Home_states:
+  control: hidden
   entities:
     - input_boolean.vacation
     - input_boolean.away
@@ -110,3 +92,6 @@ Scenes:
   - scene.goodnight_house
   - scene.leaving_home
   - scene.returning_home
+
+Sensors:
+  entities:
