@@ -18,7 +18,6 @@ Everything:
     - group.outlets
     - group.climate_control
     - group.alarm_zones
-    - group.all_automations
 
 Weather overview:
   - sensor.pws_weather_1d
