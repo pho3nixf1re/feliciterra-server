@@ -20,7 +20,7 @@ Everything:
     - group.alarm_zones
     - group.all_automations
 
-Weather_overview:
+Weather overview:
   - sensor.pws_weather_1d
   - sensor.pws_precip_1d
   - sensor.pws_temp_high_1d_f
@@ -32,15 +32,15 @@ Doors:
   - lock.front_door_locked
   - lock.garage_door_locked
 
-Garage_doors:
+Garage doors:
   - cover.left_door
   - cover.right_door
 
-Outdoor_lights:
+Outdoor lights:
   - switch.outdoor_garage_lights_switch
   - switch.front_porch_lights_switch
 
-Indoor_lights:
+Indoor lights:
   - light.master_bedroom_lamp_level
   - switch.great_room_center_lights_switch
   - switch.kitchen_cabinet_lights_switch
@@ -53,12 +53,12 @@ Outlets:
   - switch.foyer_plug_switch
   - switch.kitchen_plug_switch
 
-Climate_control:
+Climate control:
   - climate.playroom
   - climate.mudroom_hall
   - climate.roll_tide_hall
 
-Alarm_zones:
+Alarm zones:
   - switch.zone____01_15
   - switch.zone____02_16
   - switch.zone____03_23
@@ -69,7 +69,7 @@ Alarm_zones:
   - switch.zone____08_26
   - switch.zone____17_24
 
-Door_sensors:
+Door sensors:
   - binary_sensor.zone____01_15
   - binary_sensor.zone____02_16
   - binary_sensor.zone____03_23
@@ -82,7 +82,7 @@ Presence:
   - device_tracker.esther_phone
   - device_tracker.milton_phone
 
-Home_states:
+Home states:
   control: hidden
   entities:
     - input_boolean.vacation
