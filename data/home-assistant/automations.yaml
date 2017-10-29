@@ -193,13 +193,13 @@
   alias: Matt and Brooke are gone
   trigger:
     # Delayed action for router-based tracker to prevent false positives.
-    - platform: state
-      entity_id:
-        - device_tracker.brooke_phone
-        - device_tracker.matt_phone
-      from: home
-      to: not_home
-      for: '00:10:00'
+    platform: state
+    entity_id:
+      - device_tracker.brooke_phone
+      - device_tracker.matt_phone
+    from: home
+    to: not_home
+    for: '00:10:00'
   condition:
     condition: and
     conditions:
@@ -216,13 +216,12 @@
 - id: presence_returning
   alias: Matt or Brooke is home
   trigger:
-    # Delayed action for router-based tracker to prevent false positives.
-    - platform: state
-      entity_id:
-        - device_tracker.brooke_phone
-        - device_tracker.matt_phone
-      from: not_home
-      to: home
+    platform: state
+    entity_id:
+      - device_tracker.brooke_phone
+      - device_tracker.matt_phone
+    from: not_home
+    to: home
   action:
     service: input_boolean.turn_off
     entity_id: input_boolean.away
