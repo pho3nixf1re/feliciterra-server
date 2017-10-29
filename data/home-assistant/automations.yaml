@@ -232,8 +232,7 @@
   trigger:
     platform: state
     entity_id: input_boolean.away
-    from_state: off
-    to_state: on
+    to: 'on'
   action:
     - service: rest_command.alarm_arm
     - service: scene.turn_on
@@ -244,8 +243,7 @@
   trigger:
     platform: state
     entity_id: input_boolean.away
-    from_state: on
-    to_state: off
+    to: 'off'
   action:
     - service: rest_command.alarm_disarm
     - service: scene.turn_on
