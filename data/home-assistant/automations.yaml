@@ -176,15 +176,18 @@
     - service: lock.lock
       entity_id: lock.front_door_locked
 
-# - alias: 'SSL expiry notification'
-#   trigger:
-#   platform: numeric_state
-#   entity_id: sensor.ssl_cert_expiry
-#   below: 21
-#   action:
-#     service: notify.[your_notification_preference]
-#     data:
-#       message: 'Warning - SSL certificate expires in 21 days and has not been automatically renewed'
+- id: ssl_expiry
+  alias: 'SSL expiry'
+  trigger:
+  platform: numeric_state
+  entity_id: sensor.ssl_cert_expiry
+  below: 21
+  action:
+    service: notify.matt
+    data_template:
+      message: >
+        Warning - SSL certificate expires in {{ trigger.to_state.state }} days
+        and has not been automatically renewed!
 
 - id: entering_away
   alias: Entering away
