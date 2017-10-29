@@ -128,6 +128,11 @@ notify:
     platform: html5
     gcm_api_key: !secret google_cloud_messenger_key
     gcm_sender_id: !secret google_cloud_messenger_id
+  - name: matt
+    platform: group
+    services:
+      - service: webapp_matt_phone
+      - service: webapp_mturney_laptop
 
 group: !include groups.yaml
 scene: !include scenes.yaml
