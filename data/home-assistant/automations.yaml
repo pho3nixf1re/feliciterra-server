@@ -179,9 +179,9 @@
 - id: ssl_expiry
   alias: 'SSL expiry'
   trigger:
-  platform: numeric_state
-  entity_id: sensor.ssl_cert_expiry
-  below: 21
+    platform: numeric_state
+    entity_id: sensor.ssl_cert_expiry
+    below: 21
   action:
     service: notify.matt
     data_template:
@@ -240,7 +240,7 @@
     entity_id: scene.leaving_home
 
 - id: returning
-  alias: Matt or Brooke are home
+  alias: Matt or Brooke is home
   trigger:
     # Delayed action for router-based tracker to prevent false positives.
     - platform: state
