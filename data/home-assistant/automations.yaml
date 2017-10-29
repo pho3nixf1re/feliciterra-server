@@ -189,33 +189,7 @@
         Warning - SSL certificate expires in {{ trigger.to_state.state }} days
         and has not been automatically renewed!
 
-- id: entering_away
-  alias: Entering away
-  trigger:
-    platform: event
-    event_type: call_service
-    event_data:
-      service_data:
-        entity_id: scene.leaving_home
-      domain: scene
-      service: turn_on
-  action:
-    - service: rest_command.alarm_arm
-
-- id: returning_home
-  alias: Coming home
-  trigger:
-    platform: event
-    event_type: call_service
-    event_data:
-      service_data:
-        entity_id: scene.returning_home
-      domain: scene
-      service: turn_on
-  action:
-    - service: rest_command.alarm_disarm
-
-- id: leaving
+- id: presence_leaving
   alias: Matt and Brooke are gone
   trigger:
     # Delayed action for router-based tracker to prevent false positives.
@@ -236,10 +210,10 @@
         entity_id: device_tracker.matt_phone
         state: not_home
   action:
-    service: scene.turn_on
-    entity_id: scene.leaving_home
+    service: input_boolean.turn_on
+    entity_id: input_boolean.away
 
-- id: returning
+- id: presence_returning
   alias: Matt or Brooke is home
   trigger:
     # Delayed action for router-based tracker to prevent false positives.
@@ -250,5 +224,29 @@
       from: not_home
       to: home
   action:
-    service: scene.turn_on
-    entity_id: scene.returning_home
+    service: input_boolean.turn_off
+    entity_id: input_boolean.away
+
+- id: away_on
+  alias: Away on
+  trigger:
+    platform: state
+    entity_id: input_boolean.away
+    from_state: off
+    to_state: on
+  action:
+    - service: rest_command.alarm_arm
+    - service: scene.turn_on
+      entity_id: scene.leaving_home
+
+- id: away_off
+  alias: Away off
+  trigger:
+    platform: state
+    entity_id: input_boolean.away
+    from_state: on
+    to_state: off
+  action:
+    - service: rest_command.alarm_disarm
+    - service: scene.turn_on
+      entity_id: scene.returning_home

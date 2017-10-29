@@ -14,10 +14,8 @@
     group.garage_doors: closed
     media_player.vizio_smartcast: off
     switch.mudroom_hallway_lights_switch: off
-    input_boolean.away: on
 
 - name: Returning home
   entities:
     lock.garage_door_locked: unlocked
     switch.mudroom_hallway_lights_switch: on
-    input_boolean.away: off
