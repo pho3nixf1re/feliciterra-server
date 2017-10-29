@@ -216,6 +216,7 @@
     - service: rest_command.alarm_disarm
 
 - id: leaving
+  alias: Matt and Brooke are gone
   trigger:
     # Delayed action for router-based tracker to prevent false positives.
     - platform: state
@@ -239,6 +240,7 @@
     entity_id: scene.leaving_home
 
 - id: returning
+  alias: Matt or Brooke are home
   trigger:
     # Delayed action for router-based tracker to prevent false positives.
     - platform: state
