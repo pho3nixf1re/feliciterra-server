@@ -158,6 +158,7 @@
   trigger:
     platform: state
     entity_id: cover.left_door
+    to: open
     for:
       minutes: 10
   action:
@@ -169,6 +170,7 @@
   trigger:
     platform: state
     entity_id: cover.right_door
+    to: open
     for:
       minutes: 10
   action:
@@ -180,7 +182,7 @@
   trigger:
     platform: state
     entity_id: lock.front_door_locked
-    state: unlocked
+    to: unlocked
     for:
       minutes: 10
   action:
@@ -239,10 +241,6 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.away
-    - condition:
-
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.vacation
 
 - id: away_on
   alias: Away on
