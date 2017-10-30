@@ -19,3 +19,40 @@ HADashboard:
   # this is temporarily broken, watch for updates in future releases
   # dash_password: !secret dash_password
   dash_compile_on_start: 1
+
+Occupancy Simulator:
+  module: occusim
+  class: OccuSim
+  log: 1
+  #notify: 1
+  enable: input_boolean.away,on
+  test: 1
+  dump_times: 1
+  #reset_time: 02:00:00
+
+  step_evening_name: Evening
+  step_evening_start: sunset - 00:15:00
+
+  step_bedtime_name: Bedtime
+  step_bedtime_start: 21:45:00
+  step_bedtime_end: 23:00:00
+  step_bedtime_off_1: group.indoor_lights
+  step_bedtime_off_2: group.outdoor_lights
+
+  step_great_room_on_name: Great room on
+  step_great_room_on_start: 17:45:00
+  step_great_room_on_end: 18:45:00
+  step_great_room_on_on_1: switch.great_room_center_lights_switch
+
+  random_other_name: Other
+  random_other_start: Evening
+  random_other_end: Bedtime
+  random_other_minduration: 00:30:00
+  random_other_maxduration: 01:00:00
+  random_other_number: 3
+  random_other_on_1: switch.library_lights_switch
+  random_other_on_2: switch.mudroom_hallway_lights_switch
+  random_other_on_3: switch.play_room_lights_switch
+  random_other_off_1: switch.library_lights_switch
+  random_other_off_2: switch.mudroom_hallway_lights_switch
+  random_other_off_3: switch.play_room_lights_switch
