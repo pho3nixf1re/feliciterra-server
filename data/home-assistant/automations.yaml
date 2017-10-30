@@ -158,9 +158,9 @@
   trigger:
     platform: state
     entity_id: cover.left_door
+    for:
+      minutes: 10
   action:
-    - delay:
-        minutes: 10
     - service: cover.close_cover
       entity_id: cover.left_door
 
@@ -169,9 +169,9 @@
   trigger:
     platform: state
     entity_id: cover.right_door
+    for:
+      minutes: 10
   action:
-    - delay:
-        minutes: 10
     - service: cover.close_cover
       entity_id: cover.right_door
 
@@ -180,11 +180,10 @@
   trigger:
     platform: state
     entity_id: lock.front_door_locked
-    from: 'locked'
-    to: 'unlocked'
+    state: unlocked
+    for:
+      minutes: 10
   action:
-    - delay:
-        minutes: 10
     - service: lock.lock
       entity_id: lock.front_door_locked
 
