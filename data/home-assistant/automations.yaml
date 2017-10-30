@@ -8,6 +8,10 @@
         entity_id: scene.goodnight_house
       domain: scene
       service: turn_on
+  condition:
+    condition: state
+    entity_id: input_boolean.away
+    state: 'off'
   action:
     - service: rest_command.alarm_stay
     - service: climate.set_temperature
@@ -34,6 +38,10 @@
   trigger:
     platform: time
     at: '06:20:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.away
+    state: 'off'
   action:
     - service: rest_command.alarm_disarm
     - service: lock.unlock
@@ -73,6 +81,10 @@
   trigger:
     platform: time
     at: '16:45:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.away
+    state: 'off'
   action:
     - service: switch.turn_on
       entity_id: switch.kitchen_cabinet_lights_switch
@@ -204,6 +216,9 @@
     condition: and
     conditions:
       - condition: state
+        entity_id: input_boolean.away
+        state: 'off'
+      - condition: state
         entity_id: device_tracker.brooke_phone
         state: not_home
       - condition: state
@@ -223,8 +238,12 @@
     from: not_home
     to: home
   action:
-    service: input_boolean.turn_off
-    entity_id: input_boolean.away
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.away
+    - condition:
+
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.vacation
 
 - id: away_on
   alias: Away on
