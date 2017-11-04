@@ -41,6 +41,7 @@ services:
       - ./data/plex/config:/config
       - ./data/plex/transcode:/transcode
       - ./data/plex/data:/data
+      - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   openvpn:
     container_name: openvpn
     image: kylemanna/openvpn
