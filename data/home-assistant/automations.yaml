@@ -153,11 +153,12 @@
       - thu
       - fri
   action:
-    service: switch.turn_off
+    service: homeassistant.turn_off
     entity_id:
       - switch.kitchen_cabinet_lights_switch
       - switch.mudroom_hallway_lights_switch
       - switch.step_lights_switch
+      - light.master_bedroom_lamp_level
 
 - id: left_garage_door_timeout
   alias: Left garage door timeout
