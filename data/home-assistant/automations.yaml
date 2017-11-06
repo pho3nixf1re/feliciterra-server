@@ -18,19 +18,19 @@
       data_template:
         entity_id: group.climate_control
         temperature: >-
-          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
-            74
-          {%- else -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int < 59 -%}
             70
+          {%- else -%}
+            74
           {%- endif -%}
     - service: climate.set_operation_mode
       data_template:
         entity_id: group.climate_control
         operation_mode: >-
-          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
-            cool
-          {%- else -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int < 59 -%}
             heat
+          {%- else -%}
+            cool
           {%- endif -%}
 
 - id: wakeup
@@ -50,19 +50,19 @@
       data_template:
         entity_id: group.climate_control
         temperature: >-
-          {%- if states('sensor.pws_temp_high_1d_f') | int > 70 -%}
-            77
-          {%- else -%}
+          {%- if states('sensor.pws_temp_high_1d_f') | int < 70 -%}
             72
+          {%- else -%}
+            76
           {%- endif -%}
     - service: climate.set_operation_mode
       data_template:
         entity_id: group.climate_control
         operation_mode: >-
-          {%- if states('sensor.pws_temp_high_1d_f') | int > 70 -%}
-            cool
-          {%- else -%}
+          {%- if states('sensor.pws_temp_high_1d_f') | int < 70 -%}
             heat
+          {%- else -%}
+            cool
           {%- endif -%}
     - condition: time
       weekday:
@@ -98,19 +98,19 @@
       data_template:
         entity_id: climate.playroom
         temperature: >-
-          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
-            74
-          {%- else -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int < 59 -%}
             70
+          {%- else -%}
+            74
           {%- endif -%}
     - service: climate.set_operation_mode
       data_template:
         entity_id: climate.playroom
         operation_mode: >-
-          {%- if states('sensor.pws_temp_low_1d_f') | int > 69 -%}
-            cool
-          {%- else -%}
+          {%- if states('sensor.pws_temp_low_1d_f') | int < 59 -%}
             heat
+          {%- else -%}
+            cool
           {%- endif -%}
 
 - id: sunrise
