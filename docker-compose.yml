@@ -75,6 +75,8 @@ services:
     image: homeassistant/home-assistant
     network_mode: host
     restart: always
+    env:
+      PYTHONWARNINGS: ignore
     devices:
       - /dev/zwave:/dev/zwave
     volumes:
