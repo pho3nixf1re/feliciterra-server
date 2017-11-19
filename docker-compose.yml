@@ -82,14 +82,14 @@ services:
     volumes:
       - ./data/home-assistant:/config
       - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
-  ha-appdaemon:
-    container_name: ha-appdaemon
-    image: acockburn/appdaemon
-    restart: always
-    ports:
-      - 5050:5050
-    env_file:
-      - .env
-    volumes:
-      - ./data/ha-appdaemon:/conf
-      - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
+  # ha-appdaemon:
+  #   container_name: ha-appdaemon
+  #   image: acockburn/appdaemon
+  #   restart: always
+  #   ports:
+  #     - 5050:5050
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - ./data/ha-appdaemon:/conf
+  #     - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
