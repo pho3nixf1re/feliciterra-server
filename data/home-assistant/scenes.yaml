@@ -15,6 +15,7 @@
     group.garage_doors: closed
     media_player.vizio_smartcast: off
     switch.mudroom_hallway_lights_switch: off
+    switch.foyer_plug_switch: off
 
 - name: Returning home
   entities:

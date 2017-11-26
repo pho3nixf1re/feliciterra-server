@@ -75,7 +75,9 @@
     state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: switch.kitchen_cabinet_lights_switch
+      entity_id:
+        - switch.kitchen_cabinet_lights_switch
+        - switch.foyer_plug_switch
 
 - id: sunrise
   alias: Sunrise
@@ -122,6 +124,7 @@
       - switch.kitchen_cabinet_lights_switch
       - switch.mudroom_hallway_lights_switch
       - switch.step_lights_switch
+      - switch.foyer_plug_switch
       - light.master_bedroom_lamp_level
 
 - id: left_garage_door_timeout
