@@ -254,3 +254,11 @@
     - service: rest_command.alarm_disarm
     - service: scene.turn_on
       entity_id: scene.returning_home
+    - condition: sun
+      before: sunset
+      before_offset: '-00:15:00'
+    - service: switch.turn_on
+      entity_id:
+        - switch.step_lights_switch
+        - switch.great_room_back_wall_switch
+        - switch.foyer_plug_switch

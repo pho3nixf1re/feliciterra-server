@@ -24,5 +24,3 @@
   entities:
     lock.garage_door_locked: unlocked
     switch.mudroom_hallway_lights_switch: on
-    switch.foyer_plug_switch: on
-    switch.great_room_back_wall_switch: on
