@@ -40,6 +40,7 @@ Garage doors:
 Outdoor lights:
   - switch.outdoor_garage_lights_switch
   - switch.front_porch_lights_switch
+  - switch.back_porch_lights_switch
 
 Indoor lights:
   - light.master_bedroom_lamp_level
@@ -53,6 +54,7 @@ Indoor lights:
 Outlets:
   - switch.foyer_plug_switch
   - switch.kitchen_plug_switch
+  - switch.great_room_back_wall_switch
 
 Climate control:
   - climate.playroom
