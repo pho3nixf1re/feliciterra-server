@@ -1,7 +1,7 @@
-vacation:
-  name: Vacation
-  initial: off
-  icon: mdi:beach
+# vacation:
+#   name: Vacation
+#   initial: off
+#   icon: mdi:beach
 
 away:
   name: Away
