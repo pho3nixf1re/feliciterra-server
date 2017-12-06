@@ -204,7 +204,7 @@
       - device_tracker.kathy_phone
     from: home
     to: not_home
-    for: '00:10:00'
+    for: '00:5:00'
   condition:
     condition: and
     conditions:
