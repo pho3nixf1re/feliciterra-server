@@ -7,3 +7,8 @@ away:
   name: Away
   initial: off
   icon: mdi:home-outline
+
+disable_door_timeouts:
+  name: Disable all door timeouts
+  initial: off
+  icon: mdi:lock-reset
