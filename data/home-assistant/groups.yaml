@@ -88,7 +88,7 @@ Presence:
 Home states:
   control: hidden
   entities:
-    - input_boolean.vacation
+    - input_boolean.disable_door_timeouts
     - input_boolean.away
 
 Scenes:
