@@ -107,3 +107,7 @@ Automations:
   - automation.matt_or_brooke_is_home
   - automation.wakeup
   - automation.evening
+
+Christmas lights:
+  - switch.foyer_plug_switch
+  - switch.great_room_back_wall_switch

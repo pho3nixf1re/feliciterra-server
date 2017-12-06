@@ -46,6 +46,8 @@
     - service: rest_command.alarm_disarm
     - service: lock.unlock
       entity_id: lock.garage_door_locked
+    - service: homeassistant.turn_on
+      entity_id: group.christmas_lights
     - condition: time
       weekday:
         - mon
@@ -77,8 +79,7 @@
     - service: switch.turn_on
       entity_id:
         - switch.kitchen_cabinet_lights_switch
-        - switch.foyer_plug_switch
-        - switch.great_room_back_wall_switch
+        - group.christmas_lights
 
 - id: sunrise
   alias: Sunrise
@@ -126,8 +127,8 @@
       - switch.kitchen_cabinet_lights_switch
       - switch.mudroom_hallway_lights_switch
       - switch.step_lights_switch
-      - switch.foyer_plug_switch
       - light.master_bedroom_lamp_level
+      - group.christmas_lights
 
 - id: left_garage_door_timeout
   alias: Left garage door timeout
@@ -260,5 +261,4 @@
     - service: switch.turn_on
       entity_id:
         - switch.step_lights_switch
-        - switch.great_room_back_wall_switch
-        - switch.foyer_plug_switch
+        - group.christmas_lights
