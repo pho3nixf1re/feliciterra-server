@@ -141,3 +141,14 @@ script: !include scripts.yaml
 rest_command: !include rest_commands.yaml
 
 input_boolean: !include input_booleans.yaml
+
+google_assistant:
+  project_id: !secret google_cloud_project_id
+  client_id: !secret google_cloud_client_id
+  access_token: !secret google_cloud_access_token
+  # agent_user_id: [a string to identify user, default is auto-generated]
+  api_key: !secret google_homeassistant_api_key
+  exposed_domains:
+    - switch
+    - light
+    - group
