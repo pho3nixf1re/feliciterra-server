@@ -72,7 +72,7 @@ services:
   #     - ./data/fileshare/archive:/fileshare/archive
   home-assistant:
     container_name: home-assistant
-    image: homeassistant/home-assistant:latest
+    image: homeassistant/home-assistant:0.57.3
     network_mode: host
     restart: always
     environment:
