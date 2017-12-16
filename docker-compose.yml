@@ -2,7 +2,7 @@ version: '3'
 services:
   # services-logger:
   #   container_name: services-logger
-  #   image: logzio/logzio-docker
+  #   image: logzio/logzio-docker:latest
   #   restart: always
   #   env_file:
   #     - .env
@@ -44,7 +44,7 @@ services:
       - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   openvpn:
     container_name: openvpn
-    image: kylemanna/openvpn
+    image: kylemanna/openvpn:latest
     restart: always
     cap_add:
      - NET_ADMIN
@@ -54,7 +54,7 @@ services:
      - ./data/openvpn/conf:/etc/openvpn
   # samba:
   #   container_name: samba
-  #   image: dperson/samba
+  #   image: dperson/samba:latest
   #   network_mode: host
   #   restart: always
   #   command: -r -p -s "Feliciterra Files;/fileshare/shared;yes;no;no;all" -s "Feliciterra Archive;/fileshare/archive;yes;no;no;all"
@@ -72,7 +72,7 @@ services:
   #     - ./data/fileshare/archive:/fileshare/archive
   home-assistant:
     container_name: home-assistant
-    image: homeassistant/home-assistant
+    image: homeassistant/home-assistant:latest
     network_mode: host
     restart: always
     environment:
@@ -84,7 +84,7 @@ services:
       - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   # ha-appdaemon:
   #   container_name: ha-appdaemon
-  #   image: acockburn/appdaemon
+  #   image: acockburn/appdaemon:latest
   #   restart: always
   #   ports:
   #     - 5050:5050
