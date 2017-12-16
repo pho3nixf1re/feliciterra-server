@@ -107,8 +107,8 @@ lyric:
 #   password: !secret usps_password
 
 media_player:
-  - platform: plex
-    entity_namespace: 'plex'
+  # - platform: plex
+  #   entity_namespace: 'plex'
   - platform: vizio
     host: 10.0.0.75
     access_token: !secret vizio_great_room_token
