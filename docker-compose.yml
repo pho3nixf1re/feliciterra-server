@@ -30,18 +30,18 @@ services:
     volumes:
       - ./data/unifi:/unifi
       - ./data/letsencrypt/certs/gateway.feliciterra.com:/unifi/cert
-  plex:
-    container_name: plex
-    image: plexinc/pms-docker:plexpass
-    network_mode: host
-    restart: always
-    env_file:
-      - .env
-    volumes:
-      - ./data/plex/config:/config
-      - ./data/plex/transcode:/transcode
-      - ./data/plex/data:/data
-      - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
+  # plex:
+  #   container_name: plex
+  #   image: plexinc/pms-docker:plexpass
+  #   network_mode: host
+  #   restart: always
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - ./data/plex/config:/config
+  #     - ./data/plex/transcode:/transcode
+  #     - ./data/plex/data:/data
+  #     - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   openvpn:
     container_name: openvpn
     image: kylemanna/openvpn:latest
