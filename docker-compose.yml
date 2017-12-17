@@ -20,7 +20,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./data/letsencrypt:/letsencrypt
+      - /opt/services/data/letsencrypt:/letsencrypt
   unifi:
     container_name: unifi
     # https://github.com/jacobalberty/unifi-docker
@@ -28,8 +28,8 @@ services:
     network_mode: host
     restart: always
     volumes:
-      - ./data/unifi:/unifi
-      - ./data/letsencrypt/certs/gateway.feliciterra.com:/unifi/cert
+      - /opt/services/data/unifi:/unifi
+      - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/unifi/cert
   # plex:
   #   container_name: plex
   #   image: plexinc/pms-docker:plexpass
@@ -38,10 +38,10 @@ services:
   #   env_file:
   #     - .env
   #   volumes:
-  #     - ./data/plex/config:/config
-  #     - ./data/plex/transcode:/transcode
-  #     - ./data/plex/data:/data
-  #     - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
+  #     - /opt/services/data/plex/config:/config
+  #     - /opt/services/data/plex/transcode:/transcode
+  #     - /opt/services/data/plex/data:/data
+  #     - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   openvpn:
     container_name: openvpn
     image: kylemanna/openvpn:latest
@@ -51,7 +51,7 @@ services:
     ports:
      - "1194:1194/udp"
     volumes:
-     - ./data/openvpn/conf:/etc/openvpn
+     - /opt/services/data/openvpn/conf:/etc/openvpn
   # samba:
   #   container_name: samba
   #   image: dperson/samba:latest
@@ -67,12 +67,12 @@ services:
   #     - "137:137/udp"
   #     - "138:138/udp"
   #   volumes:
-  #     - ./data/samba/conf:/etc/samba
-  #     - ./data/fileshare/shared:/fileshare/shared
-  #     - ./data/fileshare/archive:/fileshare/archive
+  #     - /opt/services/data/samba/conf:/etc/samba
+  #     - /opt/services/data/fileshare/shared:/fileshare/shared
+  #     - /opt/services/data/fileshare/archive:/fileshare/archive
   home-assistant:
     container_name: home-assistant
-    image: homeassistant/home-assistant:0.57.3
+    image: homeassistant/home-assistant:latest
     network_mode: host
     restart: always
     environment:
@@ -80,8 +80,8 @@ services:
     devices:
       - /dev/zwave:/dev/zwave
     volumes:
-      - ./data/home-assistant:/config
-      - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
+      - /opt/services/data/home-assistant:/config
+      - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   # ha-appdaemon:
   #   container_name: ha-appdaemon
   #   image: acockburn/appdaemon:latest
@@ -91,5 +91,5 @@ services:
   #   env_file:
   #     - .env
   #   volumes:
-  #     - ./data/ha-appdaemon:/conf
-  #     - ./data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
+  #     - /opt/services/data/ha-appdaemon:/conf
+  #     - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
