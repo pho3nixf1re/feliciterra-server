@@ -97,9 +97,10 @@ zwave:
   polling_interval: 60000
   device_config: !include zwave_device_config.yaml
 
-lyric:
-  client_id: !secret lyric_client_id
-  client_secret: !secret lyric_client_secret
+climate:
+  - platform: lyric
+    client_id: !secret lyric_client_id
+    client_secret: !secret lyric_client_secret
 
 # TODO: fix usps integration, it's unstable
 # usps:
