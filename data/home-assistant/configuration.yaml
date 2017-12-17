@@ -152,3 +152,7 @@ google_assistant:
     - switch
     - light
     - group
+    - cover
+    - scene
+    - input_boolean
+    - media_player
