@@ -70,26 +70,3 @@ services:
   #     - /opt/services/data/samba/conf:/etc/samba
   #     - /opt/services/data/fileshare/shared:/fileshare/shared
   #     - /opt/services/data/fileshare/archive:/fileshare/archive
-  home-assistant:
-    container_name: home-assistant
-    image: homeassistant/home-assistant:latest
-    network_mode: host
-    restart: always
-    environment:
-      PYTHONWARNINGS: ignore
-    devices:
-      - /dev/zwave:/dev/zwave
-    volumes:
-      - /opt/services/data/home-assistant:/config
-      - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
-  # ha-appdaemon:
-  #   container_name: ha-appdaemon
-  #   image: acockburn/appdaemon:latest
-  #   restart: always
-  #   ports:
-  #     - 5050:5050
-  #   env_file:
-  #     - .env
-  #   volumes:
-  #     - /opt/services/data/ha-appdaemon:/conf
-  #     - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro

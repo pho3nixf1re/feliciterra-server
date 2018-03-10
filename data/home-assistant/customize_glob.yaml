@@ -1,4 +1,0 @@
-sensor.front_door_*:
-  hidden: true
-sensor.garage_door_*:
-  hidden: true
