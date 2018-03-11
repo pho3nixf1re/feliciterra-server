@@ -54,7 +54,7 @@ services:
       - -n
       - -W
       - -s
-      - "Feliciterra Files;/fileshare;yes;no;yes;all"
+      - "Feliciterra Files;/fileshare;yes;no;yes;${SHARE_USER};${SHARE_USER}"
       - -u
       - "${SHARE_USER};${SHARE_PASSWORD}"
     env_file:
