@@ -53,8 +53,10 @@ services:
       - -r
       - -n
       - -W
-      - -w FELICITERRA
-      - -s "Feliciterra Files;/fileshare;yes;no;yes;all"
+      - -s
+      - "Feliciterra Files;/fileshare;yes;no;yes;all"
+      - -u
+      - "${SHARE_USER};${SHARE_PASSWORD}"
     env_file:
       - .env
     ports:
