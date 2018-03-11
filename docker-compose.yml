@@ -54,7 +54,7 @@ services:
       - -n
       - -W
       - -w FELICITERRA
-      - -s "Feliciterra Files;/fileshare;yes;no;guest;all"
+      - -s "Feliciterra Files;/fileshare;yes;no;yes;all"
     env_file:
       - .env
     ports:
