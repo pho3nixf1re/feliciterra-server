@@ -1,41 +1,41 @@
 version: '3'
 services:
-  letsencrypt:
-    container_name: letsencrypt
-    image: csmith/letsencrypt-lexicon:latest
-    restart: always
-    environment:
-      EMAIL: brookeandmatthew@gmail.com
-      PROVIDER: 'dnsimple'
-      ACCEPT_CA_TERMS: 'true'
-      ALGORITHM: rsa
-    env_file:
-      - .env
-    volumes:
-      - ./data/letsencrypt:/letsencrypt
   unifi:
     container_name: unifi
     # https://github.com/jacobalberty/unifi-docker
     image: jacobalberty/unifi:latest
-    network_mode: host
     restart: always
+    environment:
+      VIRTUAL_HOST: unifi.feliciterra.com
+      VIRTUAL_PORT: 8443
+      VIRTUAL_PROTO: https
+      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
+      LETSENCRYPT_HOST: unifi.feliciterra.com
     volumes:
       - ./data/unifi:/unifi
-      - ./data/letsencrypt/certs/gateway.feliciterra.com:/unifi/cert
+    ports:
+      - "8080:8080/tcp"
+      - "3478:3478/udp"
+      - "6789:6789/tcp"
+      - "10001:10001/udp"
+    networks:
+      - webproxy
   # plex:
   #   container_name: plex
   #   image: plexinc/pms-docker:plexpass
   #   network_mode: host
   #   restart: always
+  #   environment:
+  #     VIRTUAL_HOST: plex.feliciterra.com
   #   env_file:
   #     - .env
   #   volumes:
   #     - /opt/services/data/plex/config:/config
   #     - /opt/services/data/plex/transcode:/transcode
   #     - /opt/services/data/plex/data:/data
-  #     - /opt/services/data/letsencrypt/certs/gateway.feliciterra.com:/letsencrypt:ro
   openvpn:
     container_name: openvpn
+    # https://github.com/kylemanna/docker-openvpn
     image: kylemanna/openvpn:latest
     restart: always
     cap_add:
@@ -46,6 +46,7 @@ services:
      - ./data/openvpn/conf:/etc/openvpn
   samba:
     container_name: samba
+    # https://github.com/dperson/samba
     image: dperson/samba:latest
     network_mode: host
     restart: always
@@ -67,3 +68,8 @@ services:
     volumes:
       - ./data/samba/conf:/etc/samba
       - ./data/fileshare:/fileshare
+
+networks:
+  webproxy:
+    external:
+      name: webproxy
