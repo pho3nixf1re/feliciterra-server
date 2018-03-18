@@ -76,6 +76,10 @@ services:
       VIRTUAL_HOST: homeassistant.feliciterra.com
       VIRTUAL_PORT: 8123
       UPSTREAM_NAME: 10.0.0.110
+      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
+      LETSENCRYPT_HOST: homeassistant.feliciterra.com
+    networks:
+      - webproxy
 
 networks:
   webproxy:
