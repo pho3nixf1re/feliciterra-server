@@ -72,6 +72,7 @@ services:
   # Dummy containers to enable Let's Encrypt automations with nginx proxy setup.
   homeassistant-proxy:
     image: cwempe/docker-dummy
+    restart: always
     environment:
       VIRTUAL_HOST: homeassistant.feliciterra.com
       VIRTUAL_PORT: 8123
