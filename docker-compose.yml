@@ -69,6 +69,14 @@ services:
       - ./data/samba/conf:/etc/samba
       - ./data/fileshare:/fileshare
 
+  # Dummy containers to enable Let's Encrypt automations with nginx proxy setup.
+  homeassistant-proxy:
+    image: cwempe/docker-dummy
+    environment:
+      VIRTUAL_HOST: homeassistant.feliciterra.com
+      VIRTUAL_PORT: 8123
+      UPSTREAM_NAME: 10.0.0.110
+
 networks:
   webproxy:
     external:
