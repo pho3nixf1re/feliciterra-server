@@ -72,7 +72,7 @@ services:
   # Dummy containers to enable Let's Encrypt automations with nginx proxy setup.
   homeassistant-proxy:
     image: cwempe/docker-dummy
-    container_name: homeassistant-proxy-dummy
+    container_name: proxy-dummy-homeassistant
     restart: always
     environment:
       VIRTUAL_HOST: homeassistant.feliciterra.com
@@ -80,6 +80,18 @@ services:
       UPSTREAM_NAME: 10.0.0.110
       LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
       LETSENCRYPT_HOST: homeassistant.feliciterra.com
+    networks:
+      - webproxy
+  homeassistant-ide-proxy:
+    image: cwempe/docker-dummy
+    container_name: proxy-dummy-homeassistant-ide
+    restart: always
+    environment:
+      VIRTUAL_HOST: ide.homeassistant.feliciterra.com
+      VIRTUAL_PORT: 8321
+      UPSTREAM_NAME: 10.0.0.110
+      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
+      LETSENCRYPT_HOST: ide.homeassistant.feliciterra.com
     networks:
       - webproxy
 
