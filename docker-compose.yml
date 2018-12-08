@@ -94,6 +94,16 @@ services:
       LETSENCRYPT_HOST: ide.homeassistant.feliciterra.com
     networks:
       - webproxy
+  homeassistant-flows-proxy:
+    image: cwempe/docker-dummy
+    container_name: proxy-dummy-homeassistant-flows
+    restart: always
+    environment:
+      VIRTUAL_HOST: flows.homeassistant.feliciterra.com
+      VIRTUAL_PORT: 1880
+      UPSTREAM_NAME: 10.0.0.101
+      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
+      LETSENCRYPT_HOST: flows.homeassistant.feliciterra.com
 
 networks:
   webproxy:
