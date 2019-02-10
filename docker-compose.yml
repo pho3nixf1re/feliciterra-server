@@ -5,12 +5,6 @@ services:
     # https://github.com/jacobalberty/unifi-docker
     image: jacobalberty/unifi:latest
     restart: always
-    environment:
-      VIRTUAL_HOST: unifi.feliciterra.com
-      VIRTUAL_PORT: 8443
-      VIRTUAL_PROTO: https
-      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
-      LETSENCRYPT_HOST: unifi.feliciterra.com
     volumes:
       - ./data/unifi:/unifi
     ports:
@@ -18,21 +12,6 @@ services:
       - "3478:3478/udp"
       - "6789:6789/tcp"
       - "10001:10001/udp"
-    networks:
-      - webproxy
-  # plex:
-  #   container_name: plex
-  #   image: plexinc/pms-docker:plexpass
-  #   network_mode: host
-  #   restart: always
-  #   environment:
-  #     VIRTUAL_HOST: plex.feliciterra.com
-  #   env_file:
-  #     - .env
-  #   volumes:
-  #     - /opt/services/data/plex/config:/config
-  #     - /opt/services/data/plex/transcode:/transcode
-  #     - /opt/services/data/plex/data:/data
   openvpn:
     container_name: openvpn
     # https://github.com/kylemanna/docker-openvpn
@@ -68,44 +47,3 @@ services:
     volumes:
       - ./data/samba/conf:/etc/samba
       - ./data/fileshare:/fileshare
-
-  # Dummy containers to enable Let's Encrypt automations with nginx proxy setup.
-  homeassistant-proxy:
-    image: cwempe/docker-dummy
-    container_name: proxy-dummy-homeassistant
-    restart: always
-    environment:
-      VIRTUAL_HOST: homeassistant.feliciterra.com
-      VIRTUAL_PORT: 8123
-      UPSTREAM_NAME: 10.0.0.101
-      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
-      LETSENCRYPT_HOST: homeassistant.feliciterra.com
-    networks:
-      - webproxy
-  homeassistant-ide-proxy:
-    image: cwempe/docker-dummy
-    container_name: proxy-dummy-homeassistant-ide
-    restart: always
-    environment:
-      VIRTUAL_HOST: ide.homeassistant.feliciterra.com
-      VIRTUAL_PORT: 8321
-      UPSTREAM_NAME: 10.0.0.101
-      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
-      LETSENCRYPT_HOST: ide.homeassistant.feliciterra.com
-    networks:
-      - webproxy
-  homeassistant-flows-proxy:
-    image: cwempe/docker-dummy
-    container_name: proxy-dummy-homeassistant-flows
-    restart: always
-    environment:
-      VIRTUAL_HOST: flows.homeassistant.feliciterra.com
-      VIRTUAL_PORT: 1880
-      UPSTREAM_NAME: 10.0.0.101
-      LETSENCRYPT_EMAIL: brookeandmatthew@gmail.com
-      LETSENCRYPT_HOST: flows.homeassistant.feliciterra.com
-
-networks:
-  webproxy:
-    external:
-      name: webproxy
