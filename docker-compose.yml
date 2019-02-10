@@ -9,6 +9,7 @@ services:
       - ./data/unifi:/unifi
     ports:
       - "8443:8443/tcp"
+      - "8080:8080/tcp"
       - "3478:3478/udp"
       - "6789:6789/tcp"
       - "10001:10001/udp"
