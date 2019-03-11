@@ -1,16 +1,18 @@
 version: '3'
 services:
-  database:
-    container_name: database
+  hassio_db:
+    container_name: hassio_db
     image: postgres:alpine
     restart: always
     ports:
       - 5432:5432/tcp
     volumes:
-      - ./data/database/data:/var/lib/postgresql/data/pgdata
-      - ./data/database/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./data/hassio_db/data:/var/lib/postgresql/data/pgdata
+      - ./data/hassio_db/postgresql.conf:/etc/postgresql/postgresql.conf
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: hassio
+      POSTGRES_DB: hassio
     env_file:
       - .env
   unifi:
