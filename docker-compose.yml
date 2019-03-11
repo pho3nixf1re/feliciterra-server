@@ -4,6 +4,8 @@ services:
     container_name: database
     image: postgres:alpine
     restart: always
+    ports:
+      - 5432:5432/tcp
     volumes:
       - ./data/database/data:/var/lib/postgresql/data/pgdata
       - ./data/database/postgresql.conf:/etc/postgresql/postgresql.conf
