@@ -1,5 +1,16 @@
 version: '3'
 services:
+  database:
+    container_name: database
+    image: postgres:latest-alpine
+    restart: always
+    volumes:
+      - ./data/database/data:/var/lib/postgresql/data/pgdata
+      - ./data/database/postgresql.conf:/etc/postgresql/postgresql.conf
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
   unifi:
     container_name: unifi
     # https://github.com/jacobalberty/unifi-docker
