@@ -1,5 +1,8 @@
 .env
 
+# IDE
+.vscode
+
 # Ignore most of the data directory folders
 data/unifi
 data/fileshare
