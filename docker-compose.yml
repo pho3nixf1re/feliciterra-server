@@ -15,19 +15,6 @@ services:
       POSTGRES_DB: hassio
     env_file:
       - .env
-  unifi:
-    container_name: unifi
-    # https://github.com/jacobalberty/unifi-docker
-    image: jacobalberty/unifi:latest
-    restart: always
-    volumes:
-      - ./data/unifi:/unifi
-    ports:
-      - "8443:8443/tcp"
-      - "8080:8080/tcp"
-      - "3478:3478/udp"
-      - "6789:6789/tcp"
-      - "10001:10001/udp"
   openvpn:
     container_name: openvpn
     # https://github.com/kylemanna/docker-openvpn
