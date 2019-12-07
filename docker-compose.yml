@@ -7,7 +7,7 @@ services:
     ports:
       - 5432:5432/tcp
     volumes:
-      - ./data/hassio_db/data:/var/lib/postgresql/data/pgdata
+      - hassio_db:/var/lib/postgresql/data/pgdata
       - ./data/hassio_db/postgresql.conf:/etc/postgresql/postgresql.conf
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
@@ -25,7 +25,7 @@ services:
     ports:
      - "1194:1194/udp"
     volumes:
-     - ./data/openvpn/conf:/etc/openvpn
+     - openvpn:/etc/openvpn
   # Samba instance has a memory leak which causes the server to crash.
   # samba:
   #   container_name: samba
@@ -51,3 +51,7 @@ services:
   #   volumes:
   #     - ./data/samba/conf:/etc/samba
   #     - ./data/fileshare:/fileshare
+
+volumes:
+  hassio_db:
+  openvpn:
