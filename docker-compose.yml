@@ -2,7 +2,7 @@ version: '3'
 services:
   hassio_db:
     container_name: hassio-db
-    image: docker.pkg.github.com/mturney/feliciterra-server/hassio-db:latest
+    image: docker.pkg.github.com/pho3nixf1re/feliciterra-server/hassio-db:latest
     restart: always
     ports:
       - 5432:5432/tcp
@@ -16,7 +16,7 @@ services:
       - .env
   openvpn:
     container_name: openvpn
-    image: docker.pkg.github.com/mturney/feliciterra-server/openvpn:latest
+    image: docker.pkg.github.com/pho3nixf1re/feliciterra-server/openvpn:latest
     restart: always
     cap_add:
      - NET_ADMIN
