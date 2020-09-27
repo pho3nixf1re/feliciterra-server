@@ -24,6 +24,21 @@ services:
      - "1194:1194/udp"
     volumes:
      - openvpn:/etc/openvpn
+  hasura:
+    image: hasura/graphql-engine:v1.3.2
+    ports:
+      - "8080:8080"
+    depends_on:
+      - hassio_db
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgresql://hassio:GhpcC5X6L2MnuOjTbxIgfawqzEikZ1@10.0.0.110/hasura
+      ## enable the console served by server
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      ## uncomment next line to set an admin secret
+      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
 
 volumes:
   hassio_db:
