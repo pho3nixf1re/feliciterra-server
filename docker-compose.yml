@@ -40,7 +40,7 @@ services:
       HASURA_GRAPHQL_DEV_MODE: "true"
     env_file:
       - .env
-      - .env.template
+      - hasura/.env
 
 volumes:
   hassio_db:
