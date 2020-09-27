@@ -14,6 +14,7 @@ services:
       POSTGRES_DB: hassio
     env_file:
       - .env
+      - hassio-db/.env
   openvpn:
     container_name: openvpn
     image: docker.pkg.github.com/pho3nixf1re/feliciterra-server/openvpn:latest
@@ -24,6 +25,8 @@ services:
      - "1194:1194/udp"
     volumes:
      - openvpn:/etc/openvpn
+    env_file:
+      - .env
   hasura:
     image: hasura/graphql-engine:v1.3.2
     ports:
@@ -33,12 +36,11 @@ services:
     restart: always
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgresql://hassio:GhpcC5X6L2MnuOjTbxIgfawqzEikZ1@10.0.0.110/hasura
-      ## enable the console served by server
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
-      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
       HASURA_GRAPHQL_DEV_MODE: "true"
-      ## uncomment next line to set an admin secret
-      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+    env_file:
+      - .env
+      - .env.template
 
 volumes:
   hassio_db:
