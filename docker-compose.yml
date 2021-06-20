@@ -32,7 +32,7 @@ services:
   hassio_db:
     container_name: hassio-db
     image: docker.pkg.github.com/pho3nixf1re/feliciterra-server/hassio-db:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - 5432:5432/tcp
     volumes:
@@ -47,7 +47,7 @@ services:
   openvpn:
     container_name: openvpn
     image: docker.pkg.github.com/pho3nixf1re/feliciterra-server/openvpn:latest
-    restart: always
+    restart: unless-stopped
     cap_add:
      - NET_ADMIN
     ports:
@@ -62,7 +62,7 @@ services:
       - "8080:8080"
     depends_on:
       - hassio_db
-    restart: always
+    restart: unless-stopped
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgresql://hassio:GhpcC5X6L2MnuOjTbxIgfawqzEikZ1@10.0.0.110/hasura
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
@@ -74,3 +74,5 @@ services:
 volumes:
   hassio_db:
   openvpn:
+  calibre-library:
+  calibre-web:
