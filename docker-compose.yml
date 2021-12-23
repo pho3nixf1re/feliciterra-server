@@ -44,39 +44,6 @@ services:
     env_file:
       - .env
       - hassio-db/.env
-  wireguard:
-    image: ghcr.io/linuxserver/wireguard
-    container_name: wireguard
-    cap_add:
-      - NET_ADMIN
-      - SYS_MODULE
-    environment:
-      - SERVERURL=wireguard.feliciterra.com
-      - SERVERPORT=51820
-      - PEERS=mturney,bjturney
-      - PEERDNS=10.0.0.1
-      # - INTERNAL_SUBNET=10.13.13.0
-      - ALLOWEDIPS=10.13.13.1,10.0.0.0/24
-    volumes:
-      - wireguard:/config
-      - /lib/modules:/lib/modules
-    ports:
-      - 51820:51820/udp
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
-    restart: unless-stopped
-  openvpn:
-    container_name: openvpn
-    image: docker.pkg.github.com/pho3nixf1re/feliciterra-server/openvpn:latest
-    restart: unless-stopped
-    cap_add:
-     - NET_ADMIN
-    ports:
-     - "1194:1194/udp"
-    volumes:
-     - openvpn:/etc/openvpn
-    env_file:
-      - .env
   hasura:
     image: hasura/graphql-engine:v1.3.2
     ports:
@@ -94,7 +61,5 @@ services:
 
 volumes:
   hassio_db:
-  openvpn:
   calibre-library:
   calibre-web:
-  wireguard:
